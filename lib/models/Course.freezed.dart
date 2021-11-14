@@ -24,9 +24,9 @@ class _$CourseTearOff {
   _Course call(
       {required String name,
       required String description,
-      required String image,
-      required List<Tag>? tags,
-      required List<Leasson>? leassons}) {
+      String? image,
+      List<Tag>? tags,
+      List<Leasson>? leassons}) {
     return _Course(
       name: name,
       description: description,
@@ -48,7 +48,7 @@ const $Course = _$CourseTearOff();
 mixin _$Course {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   List<Tag>? get tags => throw _privateConstructorUsedError;
   List<Leasson>? get leassons => throw _privateConstructorUsedError;
 
@@ -64,7 +64,7 @@ abstract class $CourseCopyWith<$Res> {
   $Res call(
       {String name,
       String description,
-      String image,
+      String? image,
       List<Tag>? tags,
       List<Leasson>? leassons});
 }
@@ -97,7 +97,7 @@ class _$CourseCopyWithImpl<$Res> implements $CourseCopyWith<$Res> {
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tags: tags == freezed
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -118,7 +118,7 @@ abstract class _$CourseCopyWith<$Res> implements $CourseCopyWith<$Res> {
   $Res call(
       {String name,
       String description,
-      String image,
+      String? image,
       List<Tag>? tags,
       List<Leasson>? leassons});
 }
@@ -152,7 +152,7 @@ class __$CourseCopyWithImpl<$Res> extends _$CourseCopyWithImpl<$Res>
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tags: tags == freezed
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -172,9 +172,9 @@ class _$_Course with DiagnosticableTreeMixin implements _Course {
   _$_Course(
       {required this.name,
       required this.description,
-      required this.image,
-      required this.tags,
-      required this.leassons});
+      this.image,
+      this.tags,
+      this.leassons});
 
   factory _$_Course.fromJson(Map<String, dynamic> json) =>
       _$$_CourseFromJson(json);
@@ -184,7 +184,7 @@ class _$_Course with DiagnosticableTreeMixin implements _Course {
   @override
   final String description;
   @override
-  final String image;
+  final String? image;
   @override
   final List<Tag>? tags;
   @override
@@ -244,9 +244,9 @@ abstract class _Course implements Course {
   factory _Course(
       {required String name,
       required String description,
-      required String image,
-      required List<Tag>? tags,
-      required List<Leasson>? leassons}) = _$_Course;
+      String? image,
+      List<Tag>? tags,
+      List<Leasson>? leassons}) = _$_Course;
 
   factory _Course.fromJson(Map<String, dynamic> json) = _$_Course.fromJson;
 
@@ -255,7 +255,7 @@ abstract class _Course implements Course {
   @override
   String get description;
   @override
-  String get image;
+  String? get image;
   @override
   List<Tag>? get tags;
   @override

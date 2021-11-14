@@ -12,9 +12,9 @@ class Course with _$Course {
   factory Course({
     required String name,
     required String description,
-    required String image,
-    required List<Tag>? tags,
-    required List<Leasson>? leassons,
+    String? image,
+    List<Tag>? tags,
+    List<Leasson>? leassons,
   }) = _Course;
 
   factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);

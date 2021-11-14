@@ -9,7 +9,7 @@ part of 'Course.dart';
 _$_Course _$$_CourseFromJson(Map<String, dynamic> json) => _$_Course(
       name: json['name'] as String,
       description: json['description'] as String,
-      image: json['image'] as String,
+      image: json['image'] as String?,
       tags: (json['tags'] as List<dynamic>?)
           ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
           .toList(),

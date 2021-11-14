@@ -1,3 +1,4 @@
+import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:dev_edu/utils/Store.dart';
 import 'package:dev_edu/utils/Strings.dart';
 import 'package:dev_edu/widgets/WidgetButton.dart';
@@ -19,7 +20,9 @@ class WidgetCourses extends StatelessWidget {
                   Strings.emptyContent,
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
-                const WidgetButton(text: Strings.add,)
+                WidgetButton(text: Strings.add, onPressed: () {
+                    context.router.replaceNamed('/page-add-course');
+                },)
           ],
     );
   }

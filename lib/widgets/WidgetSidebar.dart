@@ -1,3 +1,4 @@
+import 'package:auto_route/src/router/auto_router_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,7 +15,6 @@ class WidgetSidebar extends StatelessWidget {
         topRight: Radius.circular(20),
       ),
       child: Drawer(
-        elevation: 0,
         child: ListView(
           children: [
             DrawerHeader(
@@ -23,17 +23,23 @@ class WidgetSidebar extends StatelessWidget {
             DrawerListTile(
               title: "Dashboard",
               svgSrc: "assets/icons/chart-bar.svg",
-              press: () {},
+              press: () {
+                  context.router.replaceNamed('/');
+              },
             ),
             DrawerListTile(
               title: "Profile",
               svgSrc: "assets/icons/user.svg",
-              press: () {},
+              press: () {
+                  context.router.replaceNamed('/page-profile');
+              },
             ),
             DrawerListTile(
               title: "Settings",
               svgSrc: "assets/icons/gear.svg",
-              press: () {},
+              press: () {
+                  context.router.replaceNamed('/page-settings');
+              },
             ),
           ],
         ),

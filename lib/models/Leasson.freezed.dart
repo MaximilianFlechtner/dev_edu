@@ -23,7 +23,7 @@ class _$LeassonTearOff {
 
   _Leasson call(
       {required String name,
-      required String description,
+      required List<JsonWidget> content,
       required Author author,
       List<Tag>? tags,
       String? shortDescription,
@@ -31,7 +31,7 @@ class _$LeassonTearOff {
       List<String>? resource}) {
     return _Leasson(
       name: name,
-      description: description,
+      content: content,
       author: author,
       tags: tags,
       shortDescription: shortDescription,
@@ -51,7 +51,7 @@ const $Leasson = _$LeassonTearOff();
 /// @nodoc
 mixin _$Leasson {
   String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  List<JsonWidget> get content => throw _privateConstructorUsedError;
   Author get author => throw _privateConstructorUsedError;
   List<Tag>? get tags => throw _privateConstructorUsedError;
   String? get shortDescription => throw _privateConstructorUsedError;
@@ -69,7 +69,7 @@ abstract class $LeassonCopyWith<$Res> {
       _$LeassonCopyWithImpl<$Res>;
   $Res call(
       {String name,
-      String description,
+      List<JsonWidget> content,
       Author author,
       List<Tag>? tags,
       String? shortDescription,
@@ -90,7 +90,7 @@ class _$LeassonCopyWithImpl<$Res> implements $LeassonCopyWith<$Res> {
   @override
   $Res call({
     Object? name = freezed,
-    Object? description = freezed,
+    Object? content = freezed,
     Object? author = freezed,
     Object? tags = freezed,
     Object? shortDescription = freezed,
@@ -102,10 +102,10 @@ class _$LeassonCopyWithImpl<$Res> implements $LeassonCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as List<JsonWidget>,
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -144,7 +144,7 @@ abstract class _$LeassonCopyWith<$Res> implements $LeassonCopyWith<$Res> {
   @override
   $Res call(
       {String name,
-      String description,
+      List<JsonWidget> content,
       Author author,
       List<Tag>? tags,
       String? shortDescription,
@@ -167,7 +167,7 @@ class __$LeassonCopyWithImpl<$Res> extends _$LeassonCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
-    Object? description = freezed,
+    Object? content = freezed,
     Object? author = freezed,
     Object? tags = freezed,
     Object? shortDescription = freezed,
@@ -179,10 +179,10 @@ class __$LeassonCopyWithImpl<$Res> extends _$LeassonCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      description: description == freezed
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as List<JsonWidget>,
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -213,7 +213,7 @@ class __$LeassonCopyWithImpl<$Res> extends _$LeassonCopyWithImpl<$Res>
 class _$_Leasson with DiagnosticableTreeMixin implements _Leasson {
   _$_Leasson(
       {required this.name,
-      required this.description,
+      required this.content,
       required this.author,
       this.tags,
       this.shortDescription,
@@ -226,7 +226,7 @@ class _$_Leasson with DiagnosticableTreeMixin implements _Leasson {
   @override
   final String name;
   @override
-  final String description;
+  final List<JsonWidget> content;
   @override
   final Author author;
   @override
@@ -240,7 +240,7 @@ class _$_Leasson with DiagnosticableTreeMixin implements _Leasson {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Leasson(name: $name, description: $description, author: $author, tags: $tags, shortDescription: $shortDescription, imageUrls: $imageUrls, resource: $resource)';
+    return 'Leasson(name: $name, content: $content, author: $author, tags: $tags, shortDescription: $shortDescription, imageUrls: $imageUrls, resource: $resource)';
   }
 
   @override
@@ -249,7 +249,7 @@ class _$_Leasson with DiagnosticableTreeMixin implements _Leasson {
     properties
       ..add(DiagnosticsProperty('type', 'Leasson'))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('description', description))
+      ..add(DiagnosticsProperty('content', content))
       ..add(DiagnosticsProperty('author', author))
       ..add(DiagnosticsProperty('tags', tags))
       ..add(DiagnosticsProperty('shortDescription', shortDescription))
@@ -263,8 +263,7 @@ class _$_Leasson with DiagnosticableTreeMixin implements _Leasson {
         (other.runtimeType == runtimeType &&
             other is _Leasson &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            const DeepCollectionEquality().equals(other.content, content) &&
             (identical(other.author, author) || other.author == author) &&
             const DeepCollectionEquality().equals(other.tags, tags) &&
             (identical(other.shortDescription, shortDescription) ||
@@ -277,7 +276,7 @@ class _$_Leasson with DiagnosticableTreeMixin implements _Leasson {
   int get hashCode => Object.hash(
       runtimeType,
       name,
-      description,
+      const DeepCollectionEquality().hash(content),
       author,
       const DeepCollectionEquality().hash(tags),
       shortDescription,
@@ -298,7 +297,7 @@ class _$_Leasson with DiagnosticableTreeMixin implements _Leasson {
 abstract class _Leasson implements Leasson {
   factory _Leasson(
       {required String name,
-      required String description,
+      required List<JsonWidget> content,
       required Author author,
       List<Tag>? tags,
       String? shortDescription,
@@ -310,7 +309,7 @@ abstract class _Leasson implements Leasson {
   @override
   String get name;
   @override
-  String get description;
+  List<JsonWidget> get content;
   @override
   Author get author;
   @override

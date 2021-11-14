@@ -8,7 +8,9 @@ part of 'Leasson.dart';
 
 _$_Leasson _$$_LeassonFromJson(Map<String, dynamic> json) => _$_Leasson(
       name: json['name'] as String,
-      description: json['description'] as String,
+      content: (json['content'] as List<dynamic>)
+          .map((e) => JsonWidget.fromJson(e as Map<String, dynamic>))
+          .toList(),
       author: Author.fromJson(json['author'] as Map<String, dynamic>),
       tags: (json['tags'] as List<dynamic>?)
           ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
@@ -25,7 +27,7 @@ _$_Leasson _$$_LeassonFromJson(Map<String, dynamic> json) => _$_Leasson(
 Map<String, dynamic> _$$_LeassonToJson(_$_Leasson instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'description': instance.description,
+      'content': instance.content.map((e) => e.toJson()).toList(),
       'author': instance.author.toJson(),
       'tags': instance.tags?.map((e) => e.toJson()).toList(),
       'shortDescription': instance.shortDescription,

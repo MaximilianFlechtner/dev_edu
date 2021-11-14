@@ -5,4 +5,5 @@ class Strings {
   static const String add = 'Hinzufügen';
   static const String myCourses = 'Meine Kurse';
   static const String nextTasks = 'Nächste Aufgaben';
+  static const String details = 'Details';
 }

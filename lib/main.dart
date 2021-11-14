@@ -1,17 +1,21 @@
-import 'package:dev_edu/pages/PageHome.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:dev_edu/utils/Routes/AppRouter.gr.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
       builder: (context, widget) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, widget!),
         maxWidth: 2460,
@@ -28,20 +32,12 @@ class MyApp extends StatelessWidget {
       title: 'DevEdu',
       theme: ThemeData(
         primarySwatch: Colors.orange,
-        scaffoldBackgroundColor: const Color(0x002f3640),
-        cardColor: const Color(0x00353b48),
         textTheme: const TextTheme(
-          bodyText1: TextStyle(color: Colors.white70),
-          bodyText2: TextStyle(color: Colors.white70),
-          button: TextStyle(color: Colors.white),
           headline1: TextStyle(
-            color: Colors.white70,
             fontSize: 19,
-            fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      home: const PageHome(),
     );
   }
 }

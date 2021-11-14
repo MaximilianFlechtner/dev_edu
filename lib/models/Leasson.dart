@@ -1,4 +1,5 @@
 import 'package:dev_edu/models/Author.dart';
+import 'package:dev_edu/models/JsonWidget/JsonWidget.dart';
 import 'package:dev_edu/models/Tag.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
@@ -11,7 +12,7 @@ class Leasson with _$Leasson {
     @JsonSerializable(explicitToJson: true)
   factory Leasson({
     required String name,
-    required String description,
+    required List<JsonWidget> content,
     required Author author,
     List<Tag>? tags,
     String? shortDescription,

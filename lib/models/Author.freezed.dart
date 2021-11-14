@@ -22,9 +22,7 @@ class _$AuthorTearOff {
   const _$AuthorTearOff();
 
   _Author call(
-      {required String name,
-      required String description,
-      required String image}) {
+      {required String name, required String description, String? image}) {
     return _Author(
       name: name,
       description: description,
@@ -44,7 +42,7 @@ const $Author = _$AuthorTearOff();
 mixin _$Author {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +53,7 @@ mixin _$Author {
 abstract class $AuthorCopyWith<$Res> {
   factory $AuthorCopyWith(Author value, $Res Function(Author) then) =
       _$AuthorCopyWithImpl<$Res>;
-  $Res call({String name, String description, String image});
+  $Res call({String name, String description, String? image});
 }
 
 /// @nodoc
@@ -84,7 +82,7 @@ class _$AuthorCopyWithImpl<$Res> implements $AuthorCopyWith<$Res> {
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -94,7 +92,7 @@ abstract class _$AuthorCopyWith<$Res> implements $AuthorCopyWith<$Res> {
   factory _$AuthorCopyWith(_Author value, $Res Function(_Author) then) =
       __$AuthorCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String description, String image});
+  $Res call({String name, String description, String? image});
 }
 
 /// @nodoc
@@ -124,7 +122,7 @@ class __$AuthorCopyWithImpl<$Res> extends _$AuthorCopyWithImpl<$Res>
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -132,8 +130,7 @@ class __$AuthorCopyWithImpl<$Res> extends _$AuthorCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Author with DiagnosticableTreeMixin implements _Author {
-  _$_Author(
-      {required this.name, required this.description, required this.image});
+  _$_Author({required this.name, required this.description, this.image});
 
   factory _$_Author.fromJson(Map<String, dynamic> json) =>
       _$$_AuthorFromJson(json);
@@ -143,7 +140,7 @@ class _$_Author with DiagnosticableTreeMixin implements _Author {
   @override
   final String description;
   @override
-  final String image;
+  final String? image;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -189,7 +186,7 @@ abstract class _Author implements Author {
   factory _Author(
       {required String name,
       required String description,
-      required String image}) = _$_Author;
+      String? image}) = _$_Author;
 
   factory _Author.fromJson(Map<String, dynamic> json) = _$_Author.fromJson;
 
@@ -198,7 +195,7 @@ abstract class _Author implements Author {
   @override
   String get description;
   @override
-  String get image;
+  String? get image;
   @override
   @JsonKey(ignore: true)
   _$AuthorCopyWith<_Author> get copyWith => throw _privateConstructorUsedError;

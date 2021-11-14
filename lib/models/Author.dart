@@ -9,7 +9,7 @@ class Author with _$Author {
   factory Author({
     required String name,
     required String description,
-    required String image,
+    String? image,
   }) = _Author;
 
   factory Author.fromJson(Map<String, dynamic> json) => _$AuthorFromJson(json);
